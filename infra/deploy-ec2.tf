@@ -118,7 +118,7 @@ resource "aws_eip" "eip" {
 
 # create the instance and install the server
 resource "aws_instance" "first-instance" {
-  ami           = "ami-0fc5d935ebf8bc3bc"
+  ami           = "ami-04b70fa74e45c3917"
   instance_type = "t2.micro"
   availability_zone = "us-east-1a"
   key_name = "Tolu-New"
@@ -132,8 +132,8 @@ resource "aws_instance" "first-instance" {
 }
 
 # create the second instance and install the server
-resource "aws_instance" "first-instance" {
-  ami           = "ami-0fc5d935ebf8bc3bc"
+resource "aws_instance" "second-instance" {
+  ami           = "ami-04b70fa74e45c3917"
   instance_type = "t2.micro"
   availability_zone = "us-east-1a"
   key_name = "Tolu-New"
