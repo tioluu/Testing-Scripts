@@ -130,3 +130,18 @@ resource "aws_instance" "first-instance" {
 
   user_data = file("${path.module}/script.sh")
 }
+
+# create the second instance and install the server
+resource "aws_instance" "first-instance" {
+  ami           = "ami-0fc5d935ebf8bc3bc"
+  instance_type = "t2.micro"
+  availability_zone = "us-east-1a"
+  key_name = "Tolu-New"
+
+  network_interface {
+    device_index = 0
+    network_interface_id = aws_network_interface.nt.id
+  }
+
+  user_data = file("${path.module}/script.sh")
+}
